@@ -1,0 +1,17 @@
+rails g scaffold jornada nombre:string;
+rails g scaffold caracter carater_institucion:string;
+rails g scaffold modalidad nombre:string;
+rails g scaffold nivel nombre:string;
+rails g scaffold departamento nombre:string;
+rails g scaffold ciudad nombre:string departamento:belongs_to;
+rails g scaffold areas_conocimiento nombre:string;
+rails g scaffold nucleos_basicos_conocimiento nucleo_basico_conocimiento:string areas_conocimiento:belongs_to;
+rails g scaffold universidad nombre:string ciudad:belongs_to acreditacion_institucional:boolean caracter:belongs_to direccion:string logo:text;
+rails g scaffold sede nombre:string direccion:string universidad:belongs_to ciudad:belongs_to;
+rails g scaffold programa nombre:string codigo_snies:string costos:float numero_semestres:integer correo_contacto:string universidad:belongs_to sede:belongs_to nucleos_basicos_conocimiento:belongs_to nivel:belongs_to modalidad:belongs_to jornada:belongs_to;
+
+rake db:migrate;
+
+{ "nombre": "Bellas Artes"}
+{ "nombre": "Sociales"}
+{ "nombre": "Sociales"}
